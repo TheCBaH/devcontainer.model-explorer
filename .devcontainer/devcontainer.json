@@ -1,0 +1,21 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+    "name": "model-explorer devcontainer",
+    "build":  {
+        "dockerfile": "Dockerfile",
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "true",
+            "username": "vscode",
+            "userUid": "1000",
+            "userGid": "1000",
+            "upgradePackages": "false"
+        },
+        "./features/pip-packages": {
+            "packages": "ai-edge-model-explorer model-explorer-onnx",
+            "options": " --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.python.org/simple"
+        },
+    },
+    "remoteUser": "vscode"
+}
